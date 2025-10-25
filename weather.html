@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <style>
+        .hidden
+        {
+            display: none;
+        }
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  color: #333;
+}
+
+.container {
+  background: white;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  width: 320px;
+  max-width: 90%;
+  transition: transform 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+}
+
+input[type="text"] {
+  width: 80%;
+  padding: 0.8rem;
+  border: 2px solid #66a6ff;
+  border-radius: 8px;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #0056ff;
+  box-shadow: 0 0 10px rgba(102, 166, 255, 0.5);
+}
+
+button {
+  margin-top: 1rem;
+  background: #66a6ff;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background: #0056ff;
+  transform: scale(1.05);
+}
+
+#weatherInfo {
+  margin-top: 2rem;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  max-width: 90%;
+  text-align: center;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#cityName {
+  font-size: 1.8rem;
+  color: #0056ff;
+}
+
+#temperature {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+}
+
+#description {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+#error-message {
+  color: #ff4c4c;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="text" name="" id="city-input" placeholder="Enter City Name">
+        <button id="get-weather">Get Weather</button>
+    </div>
+    <div id="weatherInfo" class="hidden">
+        <h2 id="cityName"></h2>
+        <p id="temperature"></p>
+        <p id="description"></p>
+    </div>
+    <p id="error-message" class="hidden">City not found. Please try again.</p>
+<script src="script.js"></script>
+</body>
+
+</html>
